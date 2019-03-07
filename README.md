@@ -5,7 +5,7 @@ ErrorHnalder fournit également un système de parsing des fichiers de logs pour
 
 # Documentation
 
-##Différente méthodes :
+## Différentes méthodes :
 
 ```php
   ErrorHandler::init($options = []);
