@@ -8,17 +8,50 @@ ErrorHnalder fournit également un système de parsing des fichiers de logs pour
 ## Différentes méthodes :
 
 ```php
-  ErrorHandler::init($options = []);
-  ErrorHandler::isCreated();
-  ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null);
+ErrorHandler::init($options = []);
+ErrorHandler::isCreated();
+ErrorHandler::log($type = "", Exception $ex, mixed $additionalParameters = null);
 ```
 
 ## Options
-
-```php
+```php 
 ErrorHandler::init($options = []);
 ```
+A l'initialisation, il est nécessaire de passer en paramètres un tableau d'options pour définir la façon dont vous allez utiliser cette classe.
+
 ```php
 $options = [
   "logDir" => "/log" //Le chemin du dossier contenant les logs
  ```
+___________
+
+```php
+ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null)
+```
+_$type_ est une chaîne de caractères définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"].
+
+
+## Exemples
+
+### Initialisation
+
+```php
+//File : /src/config/initClasses.php
+
+$optionsErrorHandler = [
+  "logDir" => "/private/log"
+
+if (!ErrorHandler::isCreated()) {
+  ErrorHandler::init($optionsErrorHandler);
+}
+```
+
+### Catch d'une Exception
+
+```php
+try {
+  // your code here ...
+} catch (PDOException $ex) {
+  ErrorHandler("PDO", $ex, [$sqlReq, $sqlParams]);
+}
+```
