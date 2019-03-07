@@ -17,7 +17,7 @@ ErrorHandler::log($type = "", Exception $ex, mixed $additionalParameters = null)
 ```php 
 ErrorHandler::init($options = []);
 ```
-A l'initialisation, il est nécessaire de passer en paramètres un tableau d'options pour définir la façon dont vous allez utiliser cette classe.
+A l'initialisation, il est nécessaire de passer en paramètres un tableau d'options pour définir la façon dont vous allez utiliser cette classe, sans quoi une _LogicException_ sera lancée.
 
 ```php
 $options = [
@@ -52,6 +52,6 @@ if (!ErrorHandler::isCreated()) {
 try {
   // your code here ...
 } catch (PDOException $ex) {
-  ErrorHandler("PDO", $ex, [$sqlReq, $sqlParams]);
+  ErrorHandler::log("PDO", $ex, [$sqlReq, $sqlParams]);
 }
 ```
