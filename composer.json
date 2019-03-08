@@ -1,0 +1,32 @@
+{
+    "name": "mansartesteban/ErrorHandler",
+    "type": "library",
+    "description": "A handler for error log files.",
+    "keywords": [
+        "log",
+        "error",
+        "handler",
+        "exception"
+    ],
+    "homepage": "https://github.com/mansartesteban/ErrorHandler",
+    "support": {
+        "issues": "https://github.com/mansartesteban/ErrorHandler/issues",
+        "source": "https://github.com/mansartesteban/ErrorHandler"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Esteban MANSART",
+            "email": "esteban.mansart@gmail.com",
+            "homepage": "https://github.com/mansartesteban"
+        }
+    ],
+    "require": {
+        "php": ">= 7.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "src": "src/"
+        }
+    }
+}
