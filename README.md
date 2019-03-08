@@ -25,6 +25,11 @@ $options = [
   "cssClass" => "errorHandler-log", // Nom de la classe CSS délimitant une section de log
 ];
  ```
+ ### logDir
+ Chaîne de caractères selon votre choix (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+ 
+ ### cssClass
+ Chaîne de caractères selon votre choix (_Ex: "log", "error-log", "admin-log-section", ..._)
 ___________
 
 ```php
