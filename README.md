@@ -26,7 +26,7 @@ $options = [
 ];
  ```
 `logDir`
- Chaîne de caractères selon votre choix (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+ Chaîne de caractères selon votre choix. Si un slash est renseigné en fin de chaîne, il sera ignoré (_Ex: "/private/log", "/log", "/engine/error/log/", ..._) 
  
  `cssClass`
  Chaîne de caractères selon votre choix (_Ex: "log", "error-log", "admin-log-section", ..._)
@@ -35,7 +35,7 @@ ___________
 ```php
 ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null)
 ```
-_$type_ est une chaîne de caractères définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"].
+`type` est une chaîne de caractères définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
 
 
 ## Exemples
@@ -46,7 +46,9 @@ _$type_ est une chaîne de caractères définissant le type d'erreur. Est utilis
 //File : /src/config/initClasses.php
 
 $optionsErrorHandler = [
-  "logDir" => "/private/log"
+  "logDir" => "/private/log",
+  "cssClass" => "log-error"
+];
 
 if (!ErrorHandler::isCreated()) {
   ErrorHandler::init($optionsErrorHandler);
