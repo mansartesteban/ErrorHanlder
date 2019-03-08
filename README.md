@@ -21,7 +21,9 @@ A l'initialisation, il est nécessaire de passer en paramètres un tableau d'opt
 
 ```php
 $options = [
-  "logDir" => "/log" //Le chemin du dossier contenant les logs
+  "logDir" => "/log", // Le chemin du dossier contenant les logs
+  "cssClass" => "errorHandler-log", // Nom de la classe CSS délimitant une section de log
+];
  ```
 ___________
 
