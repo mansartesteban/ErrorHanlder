@@ -68,7 +68,7 @@ try {
 }
 
 // Exemple 2 :
-if ($url = null) {
+if ($url == null) {
   ErrorHandler::log("logic", new LogicExepction("L'url pour la requête cURL est nulle")
 }
 ```
