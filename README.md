@@ -35,7 +35,9 @@ ___________
 ```php
 ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null)
 ```
-`type` est une chaîne de caractères définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+`type` est une ```String``` définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+
+`ex` est une ```Exception``` que vous pouvez catch ou créer. Le type est `Exception` vous, pouvez donc utiliser n'importe quelle Exception héritée
 
 
 ## Exemples
@@ -58,9 +60,15 @@ if (!ErrorHandler::isCreated()) {
 ### Catch d'une Exception
 
 ```php
+// Exemple 1 :
 try {
   // your code here ...
 } catch (PDOException $ex) {
   ErrorHandler::log("PDO", $ex, [$sqlReq, $sqlParams]);
+}
+
+// Exemple 2 :
+if ($url = null) {
+  ErrorHandler::log("logic", new LogicExepction("L'url pour la requête cURL est nulle")
 }
 ```
