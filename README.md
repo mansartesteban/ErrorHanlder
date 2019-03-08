@@ -9,7 +9,7 @@ ErrorHandler provide a parsing system for log file to display beautiful interfac
 
 # Documentation
 
-## Methods :
+## Methods
 
 ```php
 ErrorHandler::init($options = []);
@@ -72,6 +72,6 @@ try {
 
 // Exemple 2 :
 if ($url == null) {
-  ErrorHandler::log("logic", new LogicExepction("url for cURL request is null");
+  ErrorHandler::log("logic", new LogicExepction("url for cURL request is null"));
 }
 ```
