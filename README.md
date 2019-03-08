@@ -25,19 +25,19 @@ $options = [
   "cssClass" => "errorHandler-log", // Nom de la classe CSS délimitant une section de log
 ];
  ```
-`logDir`
+**`logDir`**
  Chaîne de caractères selon votre choix. Si un slash est renseigné en fin de chaîne, il sera ignoré (_Ex: "/private/log", "/log", "/engine/error/log/", ..._) 
  
- `cssClass`
+ **`cssClass`**
  Chaîne de caractères selon votre choix (_Ex: "log", "error-log", "admin-log-section", ..._)
 ___________
 
 ```php
 ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null)
 ```
-`type` est une ```String``` définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+**`type`** est une _`String`_ définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
 
-`ex` est une ```Exception``` que vous pouvez catch ou créer. Le type est `Exception` vous, pouvez donc utiliser n'importe quelle Exception héritée
+**`ex`** est une _`Exception`_ que vous pouvez catch ou créer. Le type est _`Exception`_ vous, pouvez donc utiliser n'importe quelle Exception héritée
 
 
 ## Exemples
