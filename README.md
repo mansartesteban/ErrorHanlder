@@ -1,3 +1,7 @@
+# Langage
+
+[Français](readme/README.fr.md)
+
 # Présentation
 
 Cette librairie vous permet de gérer les Exceptions, et de créer des fichiers de log journalisés et triés dans des dossiers en fonction du type d'erreur.
