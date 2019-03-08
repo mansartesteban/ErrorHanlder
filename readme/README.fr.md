@@ -6,6 +6,7 @@
 
 Cette librairie vous permet de gérer les Exceptions, et de créer des fichiers de log journalisés et triés dans des dossiers en fonction du type d'erreur.
 ErrorHnalder fournit également un système de parsing des fichiers de logs pour un affichage html agréable.
+Pratique pour les CRM, les API Rest ou tout autre type d'application n'ayant pas de retour visuel direct des erreurs générées par les requêtes et autre.
 
 # Documentation
 
