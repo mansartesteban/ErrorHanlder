@@ -1,15 +1,15 @@
-# Langage
+# Language
 
 [Français](readme/README.fr.md)
 
-# Présentation
+# Presentation
 
-Cette librairie vous permet de gérer les Exceptions, et de créer des fichiers de log journalisés et triés dans des dossiers en fonction du type d'erreur.
-ErrorHnalder fournit également un système de parsing des fichiers de logs pour un affichage html agréable.
+This libs make you ablde to handle Exceptions. It create log files sorted by date and type.
+ErrorHandler provide a parsing system for log file to display beautiful interface (Inprogress)
 
 # Documentation
 
-## Différentes méthodes :
+## Methods :
 
 ```php
 ErrorHandler::init($options = []);
@@ -18,35 +18,34 @@ ErrorHandler::log($type = "", Exception $ex, mixed $additionalParameters = null)
 ```
 
 ## Options
+
 ```php 
 ErrorHandler::init($options = []);
 ```
-A l'initialisation, il est nécessaire de passer en paramètres un tableau d'options pour définir la façon dont vous allez utiliser cette classe, sans quoi une _LogicException_ sera lancée.
+At initialization, you have to pass as parameter an options array to define the behavior of you handler, otherwise it will throw a _LogicException_
 
 ```php
 $options = [
-  "logDir" => "/log", // Le chemin du dossier contenant les logs
-  "cssClass" => "errorHandler-log", // Nom de la classe CSS délimitant une section de log
+  "logDir" => "/log", // Path to directory which contains log files
+  "cssClass" => "errorHandler-log", // CSS class name that delimitate a log section
 ];
  ```
-**`logDir`**
- Chaîne de caractères selon votre choix. Si un slash est renseigné en fin de chaîne, il sera ignoré (_Ex: "/private/log", "/log", "/engine/error/log/", ..._) 
+**`logDir`** is a `string` you define. If it ends by "/", the "/" will be ignored (_Ex: "/private/log", "/log", "/engine/error/log/", ..._) 
  
- **`cssClass`**
- Chaîne de caractères selon votre choix (_Ex: "log", "error-log", "admin-log-section", ..._)
+ **`cssClass`** is `string`you define (_Ex: "log", "error-log", "admin-log-section", ..._)
 ___________
 
 ```php
 ErrorHandler::log($type = "", Exception $ex, $additionalParameters = null)
 ```
-**`type`** est une _`String`_ définissant le type d'erreur. Est utilisé pour créer un sous-répertoire dans le dossier $options["logDir"]. (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
+**`type`** is a _`string`_ which define the error type. It is used to create sub-diirectory in $options["_logDir_"] (_Ex: "PDO", "PHP", "API_FACEBOOK", ..._)
 
-**`ex`** est une _`Exception`_ que vous pouvez catch ou créer. Le type est _`Exception`_ vous, pouvez donc utiliser n'importe quelle Exception héritée
+**`ex`** is an _`Exception`_ that you catch or instanciate. You can pass any Exception type herited.
 
 
-## Exemples
+## Examples
 
-### Initialisation
+### Initialization
 
 ```php
 //File : /src/config/initClasses.php
@@ -61,7 +60,7 @@ if (!ErrorHandler::isCreated()) {
 }
 ```
 
-### Catch d'une Exception
+### Log an Exception
 
 ```php
 // Exemple 1 :
@@ -73,6 +72,6 @@ try {
 
 // Exemple 2 :
 if ($url == null) {
-  ErrorHandler::log("logic", new LogicExepction("L'url pour la requête cURL est nulle")
+  ErrorHandler::log("logic", new LogicExepction("url for cURL request is null");
 }
 ```
