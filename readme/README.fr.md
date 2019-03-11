@@ -2,6 +2,10 @@
 
 [English](../README.md)
 
+# Sommaire
+
+[Erreurs](
+
 # Présentation
 
 Cette librairie vous permet de gérer les Exceptions, et de créer des fichiers de log journalisés et triés dans des dossiers en fonction du type d'erreur.
