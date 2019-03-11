@@ -1,5 +1,5 @@
 {
-    "name": "mansartesteban/ErrorHandler",
+    "name": "mansartesteban/error-handler",
     "type": "library",
     "description": "A handler for error log files.",
     "keywords": [
