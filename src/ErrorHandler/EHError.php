@@ -7,6 +7,7 @@
  */
 
 namespace ErrorHandler;
+
 class EHError
 {
     /* TODO: return object

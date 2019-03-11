@@ -2,7 +2,6 @@
 
 namespace ErrorHandler;
 
-use ErrorHandler\EHError;
 /**
  * Classe de gestion de log d'erreur.
  * Visitez https://github.com/mansartesteban/ErrorHandler pour consulter la documentation
