@@ -1,21 +1,32 @@
 {
-    "name": "mansartesteban/error-handler",
-    "description": "Error handler class which log your Exceptions and can make beautiful display of them.",
+    "name": "mansartesteban/ErrorHandler",
     "type": "library",
+    "description": "A handler for error log files.",
+    "keywords": [
+        "log",
+        "error",
+        "handler",
+        "exception"
+    ],
+    "homepage": "https://github.com/mansartesteban/ErrorHandler",
+    "support": {
+        "issues": "https://github.com/mansartesteban/ErrorHandler/issues",
+        "source": "https://github.com/mansartesteban/ErrorHandler"
+    },
     "license": "MIT",
     "authors": [
         {
-            "name": "Esteban",
-            "email": "esteban.mansart@gmail.com"
+            "name": "Esteban MANSART",
+            "email": "esteban.mansart@gmail.com",
+            "homepage": "https://github.com/mansartesteban"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "php": ">=7.3.2"
+        "php": ">= 7.3.0"
     },
     "autoload": {
         "psr-4": {
-            "ErrorHandler\\": "src/ErrorHandler"
+            "src": "src/"
         }
     }
 }
