@@ -79,6 +79,7 @@ class ErrorHandler {
      * @param String $type Le dossier de log recherché
      * @param \DateTime $date La date du journal de log recherché
      * @return string|false Retourne le contenu du fichier trouvé sous forme de chaîne de caractères, false si une erreur survient
+     * @throws \Exception
      */
     public static function getRawLog($type = "", \DateTime $date = null) {
         if (empty($type) || null === $type) {
@@ -86,7 +87,7 @@ class ErrorHandler {
             throw new \InvalidArgumentException("Le type doit être renseigné, type: " . $type);
         }
         if (null === $date) {
-            throw new \InvalidArgumentException("La date est nulle");
+            $date = new \DateTime();
         }
         
         $subDir = self::$options["logDir"] . "/" . $type;
